@@ -13,8 +13,9 @@ $("#saveData").click(function() {
 
 // TODO
 $("#loadData").click(function() {
-    userId = $("#savedUsers option:selected").val();
-    renderer.render(savedUsers.getUserById(userId, savedUsers.getUserNameById(userId)));
+    const userId = $("#savedUsers option:selected").val();
+    const user = savedUsers.getUserById(userId);
+    renderer.render(user);
 })
 
 async function renderRandomData() {
