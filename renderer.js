@@ -25,10 +25,13 @@ class Renderer {
     
     render(data) {
         this.components.user.render(data.user);
-        console.log(data.user.friends)
         this.components.friends.render({friends: data.user.friends});
         this.components.pokemon.render(data.pokemon);
         this.components.quote.render({text: data.quote});
         this.components.baconIpsum.render({text: data.baconIpsum});
+    }
+
+    addSavedUserOption(id, name) {
+        $("#savedUsers").append($(`<option value=${id}>${name}</option>`));
     }
 }

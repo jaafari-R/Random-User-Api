@@ -11,7 +11,6 @@ class ApiManager {
     async getRandomData() {
         return Promise.all([this.getRandomPokemon(), this.getRandomQuote(), this.getRandomBaconIpsum(), this.getRandomUser()])
         .then((data) => {
-            console.log(data[3])
             return {
                 pokemon: data[0],
                 quote: data[1],
