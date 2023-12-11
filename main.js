@@ -1,6 +1,6 @@
 const apiManager = new ApiManager();
 const renderer = new Renderer();
-const savedUsers = new SavedUsers(renderer.addSavedUserOption);
+const savedUsers = new SaveUsersLocalStorage(renderer.addSavedUserOption);
 
 $("#displayRandom").click(function() {
     renderRandomData();

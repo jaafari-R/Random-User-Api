@@ -1,4 +1,4 @@
-class SavedUsers {
+class SaveUsersLocalStorage {
     constructor(usersRenderer) {
         this.idCounter = localStorage.idCounter || 0;
         this.currentUser = {}

@@ -1,3 +1,5 @@
+const FRIENDS_COUNT = 6;
+
 class ApiManager {
     constructor() {
         this.pokemonApi = new PokemonApi();
@@ -28,7 +30,6 @@ class ApiManager {
     }
 
     getRandomUser() {
-        const FRIENDS_COUNT = 6;
         return this.userApi.getRandomUser(FRIENDS_COUNT);
     }
 
