@@ -6,10 +6,13 @@ class ApiManager {
         this.baconIpsumApi = new BaconIpsumApi();
     }
 
-    // TODO add Docs/comment
-    // TODO get 7 users
     async getRandomData() {
-        return Promise.all([this.getRandomPokemon(), this.getRandomQuote(), this.getRandomBaconIpsum(), this.getRandomUser()])
+        const pokemonPromise = this.getRandomPokemon();
+        const quotePromise = this.getRandomQuote();
+        const baconIpsumPromis = this.getRandomBaconIpsum();
+        const userPromise = this.getRandomUser();
+
+        return Promise.all([pokemonPromise, quotePromise, baconIpsumPromis, userPromise])
         .then((data) => {
             return {
                 pokemon: data[0],
