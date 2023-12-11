@@ -1,0 +1,10 @@
+USER_TEMPLATE_SELECTOR = "#user-template";
+USER_CONTAINER_SELECTOR = ".user-container";
+FRIENDS_TEMPLATE_SELECTOR = "#friends-template";
+FRIENDS_CONTAINER_SELECTOR = ".friends-container";
+POKEMON_TEMPLATE_SELECTOR = "#pokemon-template";
+POKEMON_CONTAINER_SELECTOR = ".pokemon-container";
+QUOTE_TEMPLATE_SELECTOR ="#quote-template";
+QUOTE_CONTAINER_SELECTOR = ".quote-container";
+BACONIPSUM_TEMPLATE_SELECTOR = "#baconIpsum-template";
+BACONIPSUM_CONTAINER_SELECTOR = ".meat-container";
