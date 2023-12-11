@@ -9,19 +9,14 @@ class ApiManager {
     // TODO add Docs/comment
     // TODO get 7 users
     async getRandomData() {
-        const EXTRA_USERS_COUNT = 3;
-        const usersPromises = []
-        for(let i = 0; i <= EXTRA_USERS_COUNT; ++i) {
-            usersPromises.push(this.getRandomUser());
-        }
-        
-        return Promise.all([this.getRandomPokemon(), this.getRandomQuote(), this.getRandomBaconIpsum(), ...usersPromises])
+        return Promise.all([this.getRandomPokemon(), this.getRandomQuote(), this.getRandomBaconIpsum(), this.getRandomUser()])
         .then((data) => {
+            console.log(data[3])
             return {
                 pokemon: data[0],
                 quote: data[1],
                 baconIpsum: data[2],
-                users: data.splice(3)
+                user: data[3]
             };
         })
     }
@@ -31,7 +26,8 @@ class ApiManager {
     }
 
     getRandomUser() {
-        return this.userApi.getRandomUser();
+        const FRIENDS_COUNT = 6;
+        return this.userApi.getRandomUser(FRIENDS_COUNT);
     }
 
     getRandomQuote() {

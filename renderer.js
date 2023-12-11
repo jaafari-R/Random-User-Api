@@ -24,8 +24,9 @@ class Renderer {
     }
     
     render(data) {
-        this.components.user.render(data.users[0]);
-        this.components.friends.render(data.users.slice(1));
+        this.components.user.render(data.user);
+        console.log(data.user.friends)
+        this.components.friends.render({friends: data.user.friends});
         this.components.pokemon.render(data.pokemon);
         this.components.quote.render({text: data.quote});
         this.components.baconIpsum.render({text: data.baconIpsum});

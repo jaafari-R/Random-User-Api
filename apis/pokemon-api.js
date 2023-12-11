@@ -1,7 +1,7 @@
 class Pokemon {
     constructor(pokemon) {
-        this.name = pokemon.name;
-        this.imgUrl = pokemon.sprites.front_default
+        this.name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+        this.imgUrl = pokemon.sprites.front_default;
     }
 }
 
@@ -21,7 +21,6 @@ class PokemonApi {
 
     /* --------------- Helpers --------------- */
     async _getPokemonURL(pokemonId) {
-        console.log(pokemonId)
         const response = await $.get(`${POKEMON_API}?limit=1&offset=${pokemonId}/`);
         return response.results[0].url;
     }
@@ -34,7 +33,6 @@ class PokemonApi {
         return $.get(POKEMON_API)
         .then(data => {
             data.count
-            console.log(data.count)
         });
     }
 }
