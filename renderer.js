@@ -1,13 +1,12 @@
 class Component {
     constructor(templateSelector, containerSelector) {
-        this.template = $(templateSelector);
+        this.template = Handlebars.compile($(templateSelector).html());
         this.container = $(containerSelector);
     }
 
     render(data) {
         this.container.empty();
-        const HbTemplate = Handlebars.compile(this.template.html());
-        const HTML = HbTemplate(data);
+        const HTML = this.template(data);
         this.container.append(HTML);
     }
 }
@@ -25,10 +24,10 @@ class Renderer {
     
     render(data) {
         this.components.user.render(data.user);
-        this.components.friends.render({friends: data.user.friends});
+        this.components.friends.render(data.friends);
         this.components.pokemon.render(data.pokemon);
-        this.components.quote.render({text: data.quote});
-        this.components.baconIpsum.render({text: data.baconIpsum});
+        this.components.quote.render(data.quote);
+        this.components.baconIpsum.render(data.baconIpsum);
     }
 
     addSavedUserOption(id, name) {

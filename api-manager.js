@@ -18,9 +18,10 @@ class ApiManager {
         .then((data) => {
             return {
                 pokemon: data[0],
-                quote: data[1],
-                baconIpsum: data[2],
-                user: data[3]
+                quote: {text: data[1]},
+                baconIpsum: {text: data[2]},
+                user: data[3],
+                friends: {friends: data[3].friends}
             };
         })
     }
